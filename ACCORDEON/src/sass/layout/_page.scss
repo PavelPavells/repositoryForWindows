@@ -1,0 +1,126 @@
+/* ----- page ----- */
+
+$white: #fff;
+$text-color: #4f4f4f;
+$light-grey: #e7e7e7;
+$orange: #ff8663;
+$dark-grey: #545151;
+
+head {
+  font-size: 16px;
+}
+
+body {
+  font: 93.75%/1.73333em "FiraSansLight", Arial, sans-serif;
+  color: $text-color;
+  background-color: $white;
+}
+
+.accordion__container {
+  margin-top: 20%;
+}
+
+.accordion {
+  padding: 0;
+  margin: 0 6px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.accordion__item {
+  cursor: pointer;
+  list-style:none;
+  background: $light-grey;
+  border-radius: 20px;
+  margin-top: 5px;
+	&:nth-child(2n+1):not(&_active) {
+      .accordion__item-title {
+        background: $dark-grey;
+        color: $white;
+
+        &:hover {
+            background: $orange;
+            color: $white;
+        }
+      }
+    }
+
+	&_active {
+      .accordion__item-title {
+        background: $orange;
+        color: $white;
+
+        // при активном пункте стрелка повернута
+        &:after {
+          transform: rotate(180deg);
+          border-color: $white transparent;
+          transition: 0.6s;
+        }
+      }
+    }
+}
+
+.accordion__item-title {
+  @include fira();
+  margin: 0;
+  background: $light-grey;
+  padding: 10px 20px 7px 20px;
+  border-radius: 20px;
+  position: relative;
+
+  &:hover {
+    background: $orange;
+    color: $white;
+
+    // при наведениее стрелку красим в белый
+    &:after {
+        border-color: $white transparent;
+    }
+  }
+  // стрелка-треугольник
+  &:after {
+    content: '';
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 12px solid $orange;
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    margin-top: -5px;
+    margin-right: 6px;
+    transition: 0.6s;
+  }
+  // хак для стрелки, чтобы текст не заезжал под нее
+  &:before {
+    content: '';
+    float: right;
+    margin-right: 12px;
+    display: block;
+    width: 2px;
+    height: 2px;
+  }
+}
+
+.accordion__list {
+  list-style: none;
+  padding-left: 20px;
+  overflow: hidden;
+  transition: max-height 0.3s linear;
+
+
+  &_is-hidden {
+     max-height: 0;
+  }
+}
+
+.accordion__list-item {
+	&:first-child {
+		padding-top: 10px;
+	}
+	&:last-child {
+		padding-bottom: 10px;
+	}
+}

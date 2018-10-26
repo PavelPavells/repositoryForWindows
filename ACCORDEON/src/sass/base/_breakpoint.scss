@@ -1,0 +1,54 @@
+/* ----- breakpoint ----- */
+
+@import "breakpoint";
+
+// For use with max-width only:
+// +breakpoint(max-width: $tab-l)
+$phone-p: 320px;
+$phone-l: 480px;
+$tab-p: 640px;
+$tab-l: 770px;
+$desk: 960px;
+
+// For use with min-width (default breakpoint mixin)
+// +breakpoint($desktop)
+$smartphone-portrait: ($phone-p + 1px);
+$smartphone-landscape: ($phone-l + 1px);
+$tablet-portrait: ($tab-p + 1px);
+$tablet-landscape: ($tab-l + 1px);
+$desktop: ($desk + 1px) , 'no-query' '.lt-ie9';
+
+// extras
+$print: 'not screen';
+$hidpi: min-resolution 143dpi;
+$mobile: max-width $desk;
+//$breakpoint-to-ems: true
+
+
+.wrapper{
+  @include container();
+}
+
+.maincontent{
+
+  @include breakpoint( $phone-p ){
+    //background: rgba(darkorange, .4);
+    @include span(12);
+  }
+  @include breakpoint( $phone-l ){
+    //background: rgba(red, .3);
+    @include push(1);
+    @include span(10);
+  }
+  @include breakpoint( $tab-l ){
+    //background: rgba(blue, .3);
+    @include push(2);
+    @include span(8);
+  }
+  @include breakpoint( $desk ){
+    //background: rgba(green, .2);
+    @include push(3);
+    @include span(6);
+  }
+
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+USER = 'user'
+PASS = 'password'
+HOSTS = ['example.com', ]
+DOMAIN = 'dev.example.com'
+SUBDOMAIN = 'test'

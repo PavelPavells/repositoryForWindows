@@ -1,0 +1,11 @@
+@mixin fira($style: regular) {
+  @if $style == regular {
+    font-family: "FiraSansRegular",  sans-serif;
+  }
+  @if $style == light {
+    font-family: "FiraSansLight",  sans-serif;
+  }
+  @if $style == bold {
+    font-family: "FiraSansBold",  sans-serif;
+  }
+}

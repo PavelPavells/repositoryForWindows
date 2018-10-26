@@ -1,0 +1,30 @@
+server {
+    listen 80;
+    server_name {{ domain }};
+    root {{ root }};
+
+    charset utf-8;
+
+    gzip on;
+    gzip_min_length 1000;
+    gzip_disable "msie6";
+    gzip_proxied any;
+    gzip_comp_level 5;
+    gzip_types text/plain text/css application/json
+    application/x-javascript text/xml application/xml
+    application/xml+rss text/javascript application/javascript
+    image/svg+xml application/x-font-ttf font/opentype;
+
+    location / {
+        index index.html;
+        # set 0 non cache
+        expires 30d;
+        autoindex on;
+        client_max_body_size                            32M;
+        client_body_buffer_size                         512k;
+        proxy_connect_timeout                           90;
+        proxy_send_timeout                              90;
+        proxy_read_timeout                              4000;
+        proxy_buffers                                   32 4k;
+    }
+}
