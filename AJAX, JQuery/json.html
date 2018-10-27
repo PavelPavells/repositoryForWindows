@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="sendAjax"></button>
+	<div class="container"></div>
+	<script>
+		function sendAjax(url) {
+			return new Promise((resolve,reject) => {
+				let xhr = new XMLHttpRequest();
+				xhr.open('GET', url); // Документ, который предназначен на отправку на сервер
+				xhr.responseType = 'json';
+				xhr.addEventListener('load', () => {
+					resolve(xhr.response);
+				});
+				xhr.addEventListener('error', () => {
+					reject();
+				});
+				xhr.send();
+			});	
+		}
+		myButton.addEventListener('click', () => {
+			sendAjax('list.json').then((response) => {
+				for({name} of response) {
+					let div = document.createElement('div');
+					div.innerText = name;
+					container.appendChild(div);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
