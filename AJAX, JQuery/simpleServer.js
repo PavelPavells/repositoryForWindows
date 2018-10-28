@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	<script>
-		var xhr = new XMLHttpRequest();
-		xhr.open('POST', 'http://localhost:7777/', true);
-		xhr.responseType = 'json';
-		xhr.onloadend = function() {
-			console.log(xhr.response);
-		};
-		xhr.send(JSON.stringify({q : 1, w : 'data'}));
-	</script>
-</body>
-</html>
+//<!DOCTYPE html>
+//<html lang="en">
+//<head>
+//	<meta charset="UTF-8">
+//	<title>Document</title>
+//</head>
+//<body>
+//	<script>
+//		var xhr = new XMLHttpRequest();
+//		xhr.open('POST', 'http://localhost:7777/', true);
+//		xhr.responseType = 'json';
+//		xhr.onloadend = function() {
+//			console.log(xhr.response);
+//		};
+//		xhr.send(JSON.stringify({q : 1, w : 'data'}));
+//	</script>
+//</body>
+//</html>
 
 
 // SERVER //
