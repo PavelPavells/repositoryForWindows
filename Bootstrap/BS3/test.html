@@ -1,0 +1,255 @@
+<!--Таблицы-->
+table>caption{Таблица}+thead(tr>th{Ячейка $}*7)+tfoot(tr>td{Ячейка $}*7)+tbody(tr*5>td{Ячейка $}*7)
+
+<!--Кнопки-->
+a.btn.btn-default.btn-lg[#]{Обычная кнопка}+a.btn.btn-info[#]{Обычная кнопка}+a.btn.btn-danger.btn-sm[#]{Обычная кнопка}+a.btn.btn-success.btn-xs[#]{Обычная кнопка}
+
+<!--Форма-->
+            <form action="#">
+              <div class="form-group">
+                <label for="text">Имя</label>
+                <input class="form-control" id="text" type="text">
+              </div>
+              <div class="form-group">
+                <label for="mail">Почта</label>
+                <input class="form-control" id="mail" type="email">
+              </div>
+              <div class="form-group">
+                <p class="help-block">Чекбоксы</p>
+                <div class="checkbox">
+                  <label><input name="check" type="checkbox">Чекбокс 1</label>
+                </div>
+                <div class="checkbox">
+                  <label><input name="check" type="checkbox">Чекбокс 2</label>
+                </div>
+                <div class="checkbox">
+                  <label><input name="check" type="checkbox">Чекбокс 3</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <p class="help-block">Переключатели</p>
+                <div class="radio">
+                  <label><input name="radio-inline" type="radio">Переключатель 1</label>
+                </div>
+                <div class="radio">
+                  <label><input name="radio-inline" type="radio">Переключатель 2</label>
+                </div>
+                <div class="radio">
+                  <label><input name="radio-inline" type="radio">Переключатель 3</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="area">Сообщение</label>
+                <textarea class="form-control" id="area"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="reset" class="btn btn-default">
+                <input type="submit" class="btn btn-success">
+              </div>
+            </form>
+            
+<!--Картинки-->
+.row>.col-md-4*3>h3{Image $}+p(img.img-responsive[alt=image src="http://gimepix.com/img/400-400-cars-00$"])+p(lorem15)+a.btn.btn-danger[#]{Смотреть}
+
+<!--Выпадающий список-->
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                Кнопка-список
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Name header</li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Name header</li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+<!--Группа кнопок-->
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">Left</button>
+              <div class="btn-group">
+                <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+                  Кнопка-список
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header">Name header</li>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Name header</li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-default">Right</button>
+            </div>
+
+<!--Главное меню - заголовок-->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Master-CSS</a>
+        </div>
+
+<!--Главное меню - содержимое-->
+        <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Главная</a></li>
+            <li><a href="#">Джамботрон</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Содежимое <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Таблицы</a></li>
+                <li><a href="#">Кнопки</a></li>
+                <li><a href="#">Формы</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Картинки</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Подвал</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
+          </form>
+        </div>
+        
+<!--Содержимое модального окна-->
+            <div class="modal fade" id="Modal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Содержимое модального окна</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+<!--Табы-->
+            <ul class="nav nav-tabs nav-justified">
+              <li class="active"><a href="#tab1" data-toggle="tab">Таб 1</a></li>
+              <li ><a href="#tab2" data-toggle="tab">Таб 2</a></li>
+              <li ><a href="#tab3" data-toggle="tab">Таб 3</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="tab1"><p>Содержимое таба 1</p></div>
+              <div class="tab-pane fade" id="tab2"><p>Содержимое таба 2</p></div>
+              <div class="tab-pane fade" id="tab3"><p>Содержимое таба 3</p></div>
+            </div>
+<!--Popover-->
+            <p>
+              <button type="button" class="btn btn-lg btn-info" data-toggle="popover" title="Заголовок" data-content="Содержимое окна которое появляется при клике на эту кнопку. Что бы закрыть опять кликни на неё.">Кликни на меня</button>
+            </p>
+
+<!--Collapse-->
+            <p>
+              <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapse">
+                Кликни, что бы посмотреть на текст
+              </button>
+            </p>
+            <div class="collapse" id="collapse">
+              <p class="well">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quia adipisci dicta magni rerum perferendis eaque numquam vitae amet aliquid sit facilis nulla aliquam cumque consectetur, quis nostrum quisquam consequatur.
+              </p>
+            </div>
+
+
+<!--Аккордеон-->
+            <div class="panel-group" id="acc">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#acc" href="#collapse1">
+                      Панель 1
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <p><b>Панель 1</b></p>
+                    <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Деревни ipsum, вопроса запятой пунктуация lorem если. Они обеспечивает вопрос парадигматическая, текстов строчка его, если даль, власти грамматики по всей что.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#acc" href="#collapse2">
+                      Панель 2
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p><b>Панель 2</b></p>
+                    <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Деревни ipsum, вопроса запятой пунктуация lorem если. Они обеспечивает вопрос парадигматическая, текстов строчка его, если даль, власти грамматики по всей что.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#acc" href="#collapse3">
+                      Панель 3
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p><b>Панель 3</b></p>
+                    <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Деревни ipsum, вопроса запятой пунктуация lorem если. Они обеспечивает вопрос парадигматическая, текстов строчка его, если даль, власти грамматики по всей что.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+<!--Карусель-->
+          <div id="carousel" class="carousel slide" data-ride="carousel">
+            
+          </div>
+
+<!--Слайды-->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="" alt="Слайд 1">
+                <div class="carousel-caption">
+                  <h3>Слайд 1</h3>
+                  <p>Описание слайда 1</p>
+                </div>
+              </div>
+            </div>
+
+<!--Индикаторы-->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            </ol>
+
+<!--Кнопки туда-сюда-->
+            <a class="left carousel-control" href="#carousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
