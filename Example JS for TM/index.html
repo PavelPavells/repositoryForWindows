@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task Manager</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<section>
+		<div class="page-header">
+			<h1>TODO</h1>
+		</div>
+		<section>
+			<form action="#" name="new-task" class="task-form">
+				<div class="panel panel-default">
+					<div class="panel-heading">Add Task:</div>
+					<div class="panel-body">
+						<input type="text" name="task" class="task-form__text"/>
+						<input type="submit" value="Add" class="btn btn-primary" disabled>
+					</div>
+				</div>
+			</form>
+		</section>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th class="table__td">#</th>
+					<th class="table__note">Что сделать</th>
+					<th>&nbsp;</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody class="table__body">
+				<tr>
+					<th>1</th>
+					<td>Text</td>
+					<td><button type="button" class="btn btn-info">&#8593;</button></td>
+					<td><button type="button" class="btn btn-danger">X</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="main.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+</body>
+</html>
