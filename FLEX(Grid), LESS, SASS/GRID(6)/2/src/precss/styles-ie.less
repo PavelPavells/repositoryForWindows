@@ -1,0 +1,17 @@
+@import "project.less";
+@import "smart-grid.less";
+
+.humans{ 
+    .items{
+        .row-float();
+        
+        .item{
+            .col-float();
+            .offset-left-xs(1);
+            
+            &:nth-child(odd){
+                .md(clear, both);
+            }
+        }
+    }
+}

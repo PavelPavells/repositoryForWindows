@@ -1,0 +1,2 @@
+.humans .items{margin-left:-16px;margin-right:-16px}.humans .items::after{display:block;content:"";clear:both}.humans .items .item{float:left}@media screen and (max-width:992px){.humans .items .item:nth-child(odd){clear:both}}@media screen and (max-width:576px){.humans .items .item{margin-left:calc(8.333333333333334% + 16px)}}
+/*# sourceMappingURL=styles-ie.css.map */
