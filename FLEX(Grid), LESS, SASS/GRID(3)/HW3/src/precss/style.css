@@ -1,0 +1,219 @@
+ /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+ 
+ html,
+ body,
+ div,
+ span,
+ applet,
+ object,
+ iframe,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ blockquote,
+ pre,
+ a,
+ abbr,
+ acronym,
+ address,
+ big,
+ cite,
+ code,
+ del,
+ dfn,
+ em,
+ img,
+ ins,
+ kbd,
+ q,
+ s,
+ samp,
+ small,
+ strike,
+ strong,
+ sub,
+ sup,
+ tt,
+ var,
+ b,
+ u,
+ i,
+ center,
+ dl,
+ dt,
+ dd,
+ ol,
+ ul,
+ li,
+ fieldset,
+ form,
+ label,
+ legend,
+ table,
+ caption,
+ tbody,
+ tfoot,
+ thead,
+ tr,
+ th,
+ td,
+ article,
+ aside,
+ canvas,
+ details,
+ embed,
+ figure,
+ figcaption,
+ footer,
+ header,
+ hgroup,
+ menu,
+ nav,
+ output,
+ ruby,
+ section,
+ summary,
+ time,
+ mark,
+ audio,
+ video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-size: 100%;
+     font: inherit;
+     vertical-align: baseline;
+ }
+ /* Common styles */
+ 
+ html {
+     height: 100%;
+ }
+ 
+ .wrapper {
+     max-width: 1290px;
+     width: 89.5%;
+     margin: 50px auto 0;
+ }
+ 
+ .relation {
+     position: relative;
+ }
+ 
+ .relation__offset {
+     padding-bottom: 63.17%;
+     height: 0;
+ }
+ 
+ .relation__content {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+     overflow: hidden;
+ }
+ 
+ .product {
+     display: flex;
+     flex: 1 1 100%;
+     box-sizing: border-box;
+     flex-direction: column;
+     width: 32.17%;
+     position: relative;
+ }
+ 
+ .product1 {
+     order: -1;
+ }
+ 
+ .product1 .small {
+     padding-right: 4.57%;
+ }
+ 
+ .product2 .small {
+     padding-left: 4.57%;
+ }
+ 
+ .big {
+     width: 35.66%;
+ }
+ 
+ .small {
+     flex: 1 1 50%;
+ }
+ 
+ .relation__content img {
+     display: block;
+     width: 100%;
+ }
+ 
+ .small:last-child img {
+     margin-top: 3%;
+ }
+ 
+ @media screen and (max-width: 780px) {
+     .relation__offset {
+         padding-bottom: 119%;
+     }
+     
+     .product {
+         flex: 0 1 49%;
+         width: 28%;
+         justify-content: space-between;
+     }
+     
+     .product1 {
+         order: 0;
+     }
+     
+     .product .small {
+         padding: 0;
+     }
+     
+     .big {
+         width: 67%;
+     }
+     
+     .relation__content .small img {
+         margin-top: 0;
+     }
+     
+     .relation__content {
+         justify-content: space-between;
+     }
+     
+     .small {
+         flex: 0 1 48%;
+     }
+     
+ }
+
+@media screen and (max-width: 560px) {
+     .relation__offset {
+         display: none;
+     } 
+    
+    .relation__content {
+         position: static;
+         display: block;
+     } 
+    
+    .big, .product {
+        width: auto;
+    }
+    
+    .product .small {
+        margin-top: 5%;
+    }
+ }
