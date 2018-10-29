@@ -1,0 +1,126 @@
+html, body{
+    margin: 0;
+    background: #ddd;
+}
+
+.relation{
+    position: relative;
+}
+
+.relation__offset{
+    height: 0;
+}
+
+.relation__offset-1-1{
+    padding-top: 100%;
+}
+
+.relation__offset-16-9{
+    padding-top: 56.25%;
+}
+
+.relation__offset-3-2{
+    padding-top: 67%;
+}
+
+
+.relation__content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.wrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.row{
+    border: 1px solid #f90;
+}
+
+.row .relation__offset{
+    padding-top: 56.25%;
+}
+
+.relation__content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+.big{
+    background: #FFFD73;
+    flex: 1 1 100%;
+    width: 40%;
+}
+
+.product{
+    flex: 1 1 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product1{
+    order: -1;
+}
+
+.item{
+    flex: 1 1 50%;
+}
+
+.item1{
+    background: #73C9FF;
+}
+
+.item2{
+    background: #7373FF;
+}
+
+.item3{
+    background: #7373FF;
+}
+
+.item4{
+    background: #73C9FF;
+}
+
+@media screen and (max-width: 780px){
+    .row .relation__offset{
+        padding-top: 100%;
+    }
+    
+    .big{
+        width: 70%;
+    }
+    
+    .product{
+        flex: 1 1 50%;
+    }
+    
+    .product1{
+        order: 0;
+    }
+}
+
+@media screen and (max-width: 560px){
+    .row .relation__offset{
+        display: none;
+    }
+    
+    .relation__content{
+        flex-wrap: nowrap;
+        position: static;
+    }
+   
+    .big, .product{
+        width: auto;
+    }
+    
+    
+}

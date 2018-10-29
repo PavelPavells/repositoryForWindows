@@ -1,0 +1,150 @@
+body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,input,textarea,p,blockquote,th,td,menu{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img,abbr{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ul li,menu li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}legend{color:#000;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+
+
+/* Start */
+
+/*img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.wrapper{
+    display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   height: auto;
+   align-content:center;
+   justify-content: center;
+}
+
+.images{
+    flex:0 1 290px;
+}*/
+.container{
+    max-width: 960px;
+    margin: 10px auto;
+    position: relative;
+}
+.prop{
+    height: 0;
+    padding-top: 70%;
+    /*background-color: #ff0000;*/
+}
+
+.main_cont{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*align-content: center;*/
+    justify-content: center;
+}
+
+.pair{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.images{
+    flex: 0 1 auto;
+    /*display: inline-flex;
+    align-items: flex-start;*/
+}
+
+
+
+
+
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 960px){
+    .main_cont{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .images img{
+        max-width: 50% ;
+    }
+
+    .prop{
+        padding-top: 70%;
+    }
+
+    .img3{
+        order:1;
+        margin-left: 50%;
+    }
+
+    /*.img1{
+        order:2;
+    }
+
+    .img2{
+        order:3;
+    }
+
+    .img4{
+        order:4;
+    }
+
+    .img5{
+        order:5;
+    }*/
+
+    .pair1{
+        order:2;
+    }
+    .pair2{
+        order:3;
+    }
+
+}
+
+@media screen and (max-width: 870px){
+        .img3{
+            margin-left: 30%;
+        }
+        .prop{
+            padding-top: 100%;
+        }
+}
+
+@media screen and (max-width: 630px){
+
+    .prop{
+        padding-top: 120%;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    .img3{
+        margin-left: 0;
+    }
+    .prop{
+        padding-top: 150%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .main_cont{
+        flex-wrap: nowrap;
+    }
+
+    .images img{max-width: 100%}
+
+    .prop{
+        padding-top:500%;
+    }
+}
