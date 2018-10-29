@@ -1,0 +1,32 @@
+.font-face (@folder; @file; @family){
+    @font-face{
+        font-family: @family;
+        
+        src: url("@{folder}@{file}.eot?#iefix") format('embedded-opentype'),  
+             url("@{folder}@{file}.woff") format('woff'), 
+             url("@{folder}@{file}.ttf")  format('truetype'), 
+             url("@{folder}@{file}.svg#@{file}") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+.border_radius(@r){
+    border-radius: @r; 
+    -moz-border-radius: @r; 
+    -webkit-border-radius: @r; 
+    -o-border-radius: @r; 
+    -ms-border-radius: @r; 
+}
+
+.svg-linear_gradient(@dir; @clr1; @clr2){
+    background: svg-gradient(@dir, @clr1, @clr2);
+}
+
+.steps(@val; @i) when(@i > 0){
+    li:nth-child(@{i}){
+       margin-left: (@val * @i);
+    }
+    
+    .steps(@val; @i - 1); 
+}

@@ -1,0 +1,281 @@
+@import "lib.less";
+@import "reset.less";
+
+
+@placeholder_color: #757575;
+@dark_color: #044B66;
+
+@wrapper_p: 20px;
+
+@path_img: "../img";
+
+.font-face("../fonts/"; "OpenSans-Bold"; "OSB");
+
+html,body{
+    font-family: OSB;
+}
+
+:-ms-input-placeholder{color:@placeholder_color;}
+:-webkit-input-placeholder{color:@placeholder_color;}
+
+/* ---------------------------------------------------------------------------------------------------------------  */
+
+h1{font-size: 26px; margin: 10px 0;}
+.clear{clear: both;}
+.clearfix:after{clear: both;display:block;content:"";}
+
+/* ---------------------------------------------------------------------------------------------------------------  */
+.wrapper{
+    max-width: 1240px;
+    margin: 0 auto;
+    height: inherit; 
+    overflow: hidden; 
+    position: relative; 
+    padding: 0 @wrapper_p;
+}
+
+header{
+    @color: #fff;
+
+    color: @color;
+    padding: 20px 0;
+    .svg-linear_gradient(to bottom; #f00; #ff0);
+    
+    .logo{
+        width: 120px; 
+        height: 120px; 
+        background: url("@{path_img}/ball.png") center no-repeat;
+        background-size: 100%;
+    }
+
+    @offset_top: 20px;
+    
+    .slogan{
+        position: absolute; 
+        left: 170px; 
+        top: @offset_top;
+        
+        .title{
+            font-size: 30px; 
+            padding: 10px 0;
+            
+            &:hover{
+                color: darken(@color, 5%);
+            }
+        }
+        
+        .subtitle{
+            font-size: 16px; 
+            font-style: italic;
+         }
+    }
+    
+    .phone{
+        @p: 10px;
+    
+        font-size: 25px; 
+        position: absolute; 
+        right: 40px; 
+        padding: @p (2 * @p);
+        top: @offset_top;
+        background: #00f;
+        .border_radius(20px);
+     }
+}
+
+nav{
+    background: @dark_color;;
+    color: #fff;
+        
+    a{
+        color: inherit;
+    }    
+    
+    .menu_toggle{
+        display: none; 
+        height: 50px; 
+        line-height: 50px; 
+        font-size: 14px; 
+        cursor: pointer;
+    }
+    
+    ul {
+        li{
+            display: inline-block; 
+            height: 50px; 
+            line-height: 50px; 
+            font-size: 14px; 
+            margin-right: 40px;
+        }
+    }    
+}
+
+.content{
+    aside{
+        width: 280px; 
+        float: left; 
+        margin-right: 20px; 
+        padding: 10px 0;
+    }
+    
+    main{
+        overflow: hidden; 
+        padding: 10px 0;
+    }
+}
+
+.products{
+    .item{
+        width: 21.2%; 
+        padding: 1.1%;
+        border: 1px dotted #000; 
+        text-align: center; 
+        float: left; 
+        margin: 10px 10px 1.1% 0;
+        transition: width 1s;
+    }
+    
+    .title{
+        font-weight: bold;
+    }
+     
+    .photo{
+        img{
+            width: 100%;
+         }
+     }
+}
+
+/*  блок перед подвалом */
+
+@prefooter_l_width: 600px;
+@prefooter_r_width: 300px;
+
+.prefooter{
+    .wrapper{
+        div{
+            min-height: 200px;
+        
+            &.left{
+                width: @prefooter_l_width;
+                float: left;
+                background: #aaa;
+                
+                ul{
+                    .steps(10px; 5);
+                }
+            }
+            
+            &.right{
+                width: @prefooter_r_width;
+                float: right;
+                background: #777;
+            }
+        }
+    }
+}
+
+/*  блок подвала */
+
+footer{
+    @height: 50px;
+
+    height: @height; 
+    background: @dark_color;;
+    color: #fff;
+    
+    .copy{
+        line-height: @height;
+    }
+}
+
+@media screen and (max-width: 1180px){
+    .products{
+        .item{
+            width: 29%;
+        }
+    }
+}
+
+@media screen and (max-width: 960px){
+    .content{
+        aside{
+             width: 100%;
+             float: none;
+             margin-right: 0;
+             text-align: center;
+             
+             .col{
+                display: inline-block;
+                width: 300px;
+                margin: 0;
+                text-align: left;
+            }
+        }
+     }
+     
+     h1{
+        text-align: center;
+     }
+}
+
+@media screen and (max-width: (@prefooter_l_width + @prefooter_r_width + (2 * @wrapper_p) + 20px)){
+    .prefooter{
+        .wrapper{
+            div{
+                &.left{
+                    float: none;
+                    width: 100%;
+                }
+                
+                &.right{
+                    float: none;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 680px){
+    header{
+        text-align: center;
+        
+        .logo{margin: 0 auto;}
+        .slogan{position: static;}
+        .phone{position: static; margin-top: 10px;}
+    }
+
+    nav{
+        text-align: center;
+        
+        .menu_toggle{
+            display: block;
+        }
+        
+        ul{
+            display: none;
+            
+            li{
+                display: block;
+                margin-right: 0;
+            }
+        }
+    }
+    
+    .products{
+        .item{
+            width: 44.8%;
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .products{
+        .item{
+            float: none;
+            width: 90%;
+            margin: 20px auto;
+        }
+    }
+}
