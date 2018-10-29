@@ -24,7 +24,7 @@ let mainList = {
 for (let i = 0; i < 5; i++) {
 	let a = prompt("Какой тип товаров будем продавать?");
 
-	if ((typeof(a)) === "string" && (typeof(a)) !=null && a !=
+	if ((typeof(a)) === "string" && (typeof(a)) !=null && a != undefined ) {
 	console.log("Все верно");
 	mainList.shopGoods[i] = a;
 } else {
@@ -37,4 +37,4 @@ mainList.shopGoods[2] = prompt("Какой тип товаров будем пр
  
 alert(mainList.money / 30);
 console.log(mainList);
-
+};
