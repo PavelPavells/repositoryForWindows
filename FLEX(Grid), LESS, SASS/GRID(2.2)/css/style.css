@@ -1,0 +1,54 @@
+html, body{
+    margin: 0;
+}
+
+.wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.humans{
+    background: #232323;
+    text-align: center;
+}
+
+.humans .wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.humans .col{
+    background: #fff;
+    border-radius: 10px;
+    width: calc(25% - 30px);
+    margin: 15px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.humans .col img{
+    margin: 10px 0;
+    width: 90%;
+    align-self: center;
+}
+
+.humans .col .subtitle{
+    color: #6cc372;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.humans .col .job{
+    margin: auto 10px 10px 10px;
+}
+
+.humans .col .follow{
+    background: #6cc372;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+}
