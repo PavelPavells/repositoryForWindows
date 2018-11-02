@@ -1,0 +1,479 @@
+/*Подключение внешних стилей изначально не используется, так как важно выполнение саомго задания*/
+
+/* Спрятать при клике */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" id="hider" value="Нажми для скрытия">
+	<div id="text">Text</div>
+	<script>
+		document.getElementById('hider').onclick = funciton() {
+			document.getElementById('text').style.display = 'none';
+		};
+	</script>
+</body>
+</html>
+
+/* Раскрывающееся меню */
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    .menu ul {
+      margin: 0;
+      list-style: none;
+      padding-left: 20px;
+      display: none;
+    }
+
+    .menu .title {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .menu .title::before {
+      content: '▶ ';
+      font-size: 80%;
+      color: green;
+    }
+
+    .menu.open .title::before {
+      content: '▼ ';
+    }
+
+    .menu.open ul {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="sweeties" class="menu">
+    <span class="title">Сладости (нажми меня)!</span>
+    <ul>
+      <li>Торт</li>
+      <li>Пончик</li>
+      <li>Пирожное</li>
+    </ul>
+
+  </div>
+	<script>
+		var menuElem = document.getElementById('sweeties');
+		var titleElem = menuElem.querySelector('.title');
+		titleElem.onclick = function() {
+			menuElem.classList.toggle('open');
+		};
+	</script>
+</body>
+</html>
+
+/* Спрятать сообщение при клике */
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" href="messages.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <div id="messages-container">
+    <div class="pane">
+      <h3>Лошадь</h3>
+      <p>Домашняя лошадь — животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p>
+      <button class="remove-button">[x]</button>
+    </div>
+    <div class="pane">
+      <h3>Осёл</h3>
+      <p>Домашний осёл или ишак — одомашненный подвид дикого осла, сыгравший важную историческую роль в развитии хозяйства и культуры человека. Все одомашненные ослы относятся к африканским ослам.</p>
+      <button class="remove-button">[x]</button>
+    </div>
+    <div class="pane">
+      <h3>Корова, а также пара слов о диком быке, о волах и о тёлках. </h3>
+      <p>Коро́ва — самка домашнего быка, одомашненного подвида дикого быка, парнокопытного жвачного животного семейства полорогих. Самцы вида называются быками, молодняк — телятами, кастрированные самцы — волами. Молодых (до первой стельности) самок называют
+        тёлками.
+      </p>
+      <button class="remove-button">[x]</button>
+    </div>
+  </div>
+  <script>
+  	var buttons = document.querySelectorAll('#messages-container .remove-button');
+  	for(var i = 0; i < buttons.length; i++){
+  		var buttons = buttons[i];
+  		button.onclick = function() {
+    	var el = this.parentNode;
+    	el.parentNode.removeChild(el);
+    	};
+	}
+  </script>
+</body>
+</html>
+
+/* Передвигать мяч по полю */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#field {
+			width: 200px;
+			height: 150px;
+			border: 10px groove black;
+			background-color: #00FF00;
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+		}
+		#ball {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 40px;
+			height: 40px;
+			-webkit-transition: all 1s;
+			-moz-transition: all 1s;
+			-o-transition: all 1s;
+			-ms-transition: all 1s;
+			transition: all 1s;
+		}
+	</style>
+</head>
+<body>
+	Кликните на любое место поля, чтобы мяч перелетел туда.
+  <br>
+
+
+  <div id="field">
+    <img src="https://js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  </div>
+  <script>
+  	var field = getElementById('field');
+  	var ball = getElementById('ball');
+  	field.onclick = function(event) {
+  		var fieldCoords = this.getBoundingCLientRect();
+  		var fieldInnerCords = {
+  			top : fieldCoords.top + field.clientTop,
+  			left : fieldCoords.left + field.clientLeft
+  		}
+  		var ballCoords = {
+  			top : event.clientY - fieldInnerCords.top - ball.clientHeight / 2,
+  			left : event.clientX - fieldInnerCords.left - ball.clientHeight / 2
+  		}
+  		if(ballCoords.top < 0) ballCoords.top = 0;
+  		if(ballCoords.left < 0) ballCoords.left = 0;
+  		if(ballCoords.left + ball.clientWidth > field.clientWidth) {
+  			ballCoords.left = field.clientWidth - ball.clientWidth;
+  		}
+  		if(ballCoords.top + ball.clientHeight > field.clientHeight) {
+			ballCoords.top = field.clientHeight - ball.clientHeight;
+  		}
+  		ball.style.left = ballCoords.left + 'px';
+  		ball.style.top = ballCoords.top + 'px';
+    }
+  </script>
+</body>
+</html>
+
+/* Скрытие сообщений с помощью делегирования */
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" href="messages.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <div id="messages-container">
+    <div class="pane">
+      <h3>Лошадь</h3>
+      <p>Домашняя лошадь — животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p>
+      <button class="remove-button">[x]</button>
+    </div>
+    <div class="pane">
+      <h3>Осёл</h3>
+      <p>Домашний осёл или ишак — одомашненный подвид дикого осла, сыгравший важную историческую роль в развитии хозяйства и культуры человека. Все одомашненные ослы относятся к африканским ослам.</p>
+      <button class="remove-button">[x]</button>
+    </div>
+    <div class="pane">
+      <h3>Корова, а также пара слов о диком быке, о волах и о тёлках. </h3>
+      <p>Коро́ва — самка домашнего быка, одомашненного подвида дикого быка, парнокопытного жвачного животного семейства полорогих. Самцы вида называются быками, молодняк — телятами, кастрированные самцы — волами. Молодых (до первой стельности) самок называют
+        тёлками.
+      </p>
+      <button class="remove-button">[x]</button>
+    </div>
+  </div>
+  <script>
+  	var container = document.getElementById('messages-container');
+  	container.onclick = function(events) {
+  		if(!event.target.classList.contains('remove-button')) {
+  			event.target.parentNode.hidden = !event.target.parentNode.hidden;
+  	}
+  </script>
+</body>
+</html>
+
+/* Раскрывающееся дерево */
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    .tree span:hover {
+      font-weight: bold;
+    }
+
+    .tree span {
+      cursor: pointer;
+    }
+  </style>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <ul class="tree">
+    <li>Животные
+      <ul>
+        <li>Млекопитающие
+          <ul>
+            <li>Коровы</li>
+            <li>Ослы</li>
+            <li>Собаки</li>
+            <li>Тигры</li>
+          </ul>
+        </li>
+        <li>Другие
+          <ul>
+            <li>Змеи</li>
+            <li>Птицы</li>
+            <li>Ящерицы</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Рыбы
+      <ul>
+        <li>Аквариумные
+          <ul>
+            <li>Гуппи</li>
+            <li>Скалярии</li>
+          </ul>
+
+        </li>
+        <li>Морские
+          <ul>
+            <li>Морская форель</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+  	var tree = getElementsByTagName('ul')[0];
+  	var treeLis = tree.getElementsByTagName('li');
+  	for(var i = 0; i < treeLis.length; i++) {
+  		var li = treeLis[i];
+  		var span = document.createElement('span');
+  		li.insertBefore(span, li.firstChild);
+  		span.appendChild(span.nextSibling);
+  	}
+  	tree.onclick = function(event) {
+  		var target = event.target;
+  		if(target.tagName != 'SPAN') {
+  			return
+  		}
+  		var childrenContainer = target.parentNode.getElementsByTagName('ul')[0];
+  		if(!childrenContainer) return;
+  		childrenContainer.hidden = !childrenContainer.hidden;
+  	}
+  </script>
+</body>
+</html>
+
+/* Сортировка таблицы */
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    th {
+      cursor: pointer;
+    }
+
+    th:hover {
+      background: green;
+    }
+  </style>
+</head>
+
+<body>
+
+  <table id="grid">
+    <thead>
+      <tr>
+        <th data-type="number">Возраст</th>
+        <th data-type="string">Имя</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>5</td>
+        <td>Вася</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Петя</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Женя</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Маша</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Илья</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+  	var grid = document.getElementById('grid');
+  	grid.onclick = function(e) {
+  		if(e.target.tagName != 'TH') return;
+  		sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'));
+  	};
+  	function sortGrid(colNum, type) {
+  		var tbody = grid.getElementsByTagName('tbody')[0];
+  		var rowsArray = [].slice.call(tbody.rows);
+  		var compare;
+  		switch(type) {
+  			case 'number' : 
+  			compare = function(rowA, rowB) {
+  				return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+  			};
+  			break;
+  			case 'string' : 
+  			compare = function(rowA, rowB) {
+  				return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTMl;
+  			};
+  			break;
+  		}
+  		rowsArray.sort(compare);
+  		grid.removeChild(tbody);
+  		for(var i = 0; i < rowsArray.length; i++) {
+  			tbody.appendChild(rowsArray[i]);
+  		}
+  		grid.appendChild(tbody);
+  	}
+  </script>
+</body>
+</html>
+ 
+/* Примерный скрипт для галереи изображении по клику */
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Галерея</title>
+  <link rel="stylesheet" href="gallery.css">
+  <meta charset="utf-8">
+</head>
+<body>
+  <p><img id="largeImg" src="https://js.cx/gallery/img1-lg.jpg" alt="Large image"></p>
+
+  <ul id="thumbs">
+    <li>
+      <a href="" title="Image 2"><img src="https://js.cx/gallery/img2-thumb.jpg"></a>
+    </li>
+    <li>
+      <a href="" title="Image 3"><img src="https://js.cx/gallery/img3-thumb.jpg"></a>
+    </li>
+    <li>
+      <a href="" title="Image 4"><img src="https://js.cx/gallery/img4-thumb.jpg"></a>
+    </li>
+    <li>
+      <a href="" title="Image 5"><img src="https://js.cx/gallery/img5-thumb.jpg"></a>
+    </li>
+    <li>
+      <a href="" title="Image 6"><img src="https://js.cx/gallery/img6-thumb.jpg"></a>
+    </li>
+  </ul>
+  <script>
+  	var largeImg = document.getElementById('largeImg');
+  	var thumbs = document.getElementById('thumbs');
+  	thumbs.onclick = function(e) {
+  		var target = e.target;
+  		while(target != this) {
+  			if(target.nodeName == 'A') {
+  				showThumbnail(target.href, target.title);
+  				return false;
+  			}
+  			target = target.parentNode;
+  		}
+  	}
+  	function showThumbnail(href, title) {
+  		largeImg.src = href;
+  		largeImg.alt = title;
+  	}
+  	//. Предзагрузка
+  	var imgs = thumbs.getElementsByTagName('img');
+  	for(var i = 0; i < imgs.length; i++) {
+  		var url = imgs[i].parentNode.href;
+  		var img = document.createElement('img');
+  		img.src = url;
+  	}
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

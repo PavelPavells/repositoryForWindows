@@ -1,0 +1,195 @@
+<!--Поле только для цифр
+// При помощи событий клавиатуры сделайте так, чтобы в поле можно было вводить только цифры. 
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  Введите ваш возраст:
+  <input type="text">
+  <script>
+    document.getElementsByTagName('input')[0].onkeypress = function(e) {
+      e = e || event;
+      if (e.ctrlKey || e.altKey || e.metaKey) return;
+      var chr = getChar(e);
+      // с null надо осторожно в неравенствах, т.к. например null >= '0' => true!
+      // на всякий случай лучше вынести проверку chr == null отдельно
+      if (chr == null) return;
+      if (chr < '0' || chr > '9') {
+        return false;
+      }
+    };
+    function getChar(event) {
+      if (event.which == null) {
+        if (event.keyCode < 32) return null;
+        return String.fromCharCode(event.keyCode) // IE
+      }
+      if (event.which != 0 && event.charCode != 0) {
+        if (event.which < 32) return null;
+        return String.fromCharCode(event.which) // остальные
+      }
+      return null; // специальная клавиша
+    }
+  </script>
+</body>
+</html>
+
+
+<!-- Слайдер -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="slider" class="slider">
+    <div class="thumb"></div>
+  </div>
+  <script>
+  	var sliderElem = document.getElementById('slider');
+  	var thumbElem = sliderElem.children[0];
+  	thumbElem.onmousedown = function(e) {
+  		var thumbCoords = getCoords(thumbElem);
+  		var shiftX = e.pageX - thumbCoords.left;
+// shiftY здесь не нужен, слайдер двигается только по горизонтали
+		var sliderCoords = getCoords(sliderElem);
+		document.ommousemove = function(e) {
+			//  вычесть координату родителя, т.к. position: relative
+			var newLeft = e.pageX - shiftX - sliderCoordsleft;
+			//курсор уходит за слайдер
+			if(newLeft < 0) {
+				newLeft = 0;
+			};
+			var rightEdge = sliderElem.offsetWidth - thumbElem.offsetWidth;
+			if(newLeft > rightEdge) {
+				newLeft = rightEdge;
+			}
+			thumbElem.style.left = newLeft + 'px';
+		}
+		document.onmouseup = function() {
+			document.onmousemove = document.onmouseup = null;
+		};
+		return false;
+  	};
+  	thumbElem.ondragstart = function() {
+  		return false;
+  	};
+  	function getCoords(elem) { // -( IE8- );
+  		var box = elem.getBoundingClientRect();
+  		return {
+  			top : box.top + pageYOffset,
+  			left : box.left + pageXOffset
+  		};
+  	}
+  </script>
+</body>
+</html>
+
+<!-- Эта задача состоит из трёх частей.
+
+1)Сделайте список, элементы которого можно выделять кликом.
+
+2)Добавьте мульти-выделение. Если клик с нажатым Ctrl (Cmd под Mac), то элемент добавляется-удаляется из выделенных.
+
+3)Добавьте выделение промежутков. Если происходит клик с нажатым Shift, то к выделению добавляется промежуток элементов от предыдущего кликнутого до этого. При этом не важно, какое именно действие делал предыдущий клик. Это похоже на то, как работает файловый менеджер в ряде ОС, но чуть проще, так как конкретная реализация выделений различается у разных ОС, и её точное воспроизведение не входит в эту задачу. -->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    .selected {
+      background: #0f0f0f;
+    }
+    li {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  Клик на элементе выделяет только его.
+  <br> Ctrl(Cmd)+Клик добавляет/убирает элемент из выделенных.
+  <br> Shift+Клик добавляет промежуток от последнего кликнутого к выделению.
+  <br>
+  <ul>
+    <li>Кристофер Робин</li>
+    <li>Винни-Пух</li>
+    <li>Ослик Иа</li>
+    <li>Мудрая Сова</li>
+    <li>Кролик. Просто кролик.</li>
+  </ul>
+  <script>
+  	var ul = document.querySelector('ul');
+  	var lastClickedLi = null;
+  	// Обработчики
+  	ul.onclick = function(event) {
+  		var target = event.target;
+  // возможно, клик был внутри списка UL, но вне элементов LI
+  		if(target.tagName != 'LI') return;
+  // для Mac проверяем Cmd, т.к. Ctrl + click там контекстное меню
+  		if(event.metKey || event.ctrlKey) {
+  			toggleSelect(target);
+  		} else if(event.shiftKey) {
+  			selectFromLast(target);
+  		} else {
+  			selectSingle(target);
+  		}
+  			lastClickedLi = target;
+  	}
+  	ul.onmousedown = function() {
+  		return false;
+  	};
+  	// Функции для выделения 
+  	function toggleSelect(li) {
+  		li.classList.toggle('selected');
+  	};
+  	function selectFromLast(target) {
+  		var startElem = lastClickedLi || ul.children[0];
+  		var isLastClickedBefore = startElem.compareDocumentPosition(target) & 4;
+  		if(isLastClickedBefore) {
+  			for(var elem = startElem; elem != target; elem = elem.nextElementSibling) {
+  				elem.classList.add('selected');
+  			}
+  		} else {
+  			for(var elem = startElem; elem != target; elem = elem.previousElementSibling) {
+  				elem.classList.add('selected');
+  			}
+  		}
+  		elem.classList.add('selected');
+  	};
+  	function deselectAll() {
+  		for(var i = 0; i < ul.children.length; i++) {
+  			ul.children[i].classList.remove('selected');
+  		};
+  	};
+  	function selectSingle(li) {
+  		deselectAll();
+  		li.classList.add('selected');
+  	};
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
