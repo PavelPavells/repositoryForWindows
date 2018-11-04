@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>MVVM</h1>
+    <form role="form">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" checked id="bindingEnabled"> Динамическое связывание
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="firstName">Имя</label>
+            <input type="text" class="form-control" data-bind="firstName">
+            <input type="text" class="form-control" data-bind="firstName">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Фамилия</label>
+            <input type="text" class="form-control" id="lastName" data-bind="lastName">
+        </div>
+        <div class="form-group">
+            <label for="old">Возраст</label>
+            <input type="text" class="form-control" id="old" data-bind="old">
+        </div>
+        <div class="form-group">
+            <label for="town">Город</label>
+            <input type="text" class="form-control" id="town" data-bind="town">
+        </div>
+    </form>
+    <hr>
+    <div class="jumbotron">
+        <div data-bind="firstName"></div>
+        <div data-bind="firstName"></div>
+        <div data-bind="firstName"></div>
+        <div data-bind="firstName"></div>
+        <div data-bind="firstName"></div>
+
+        <h1>Привет!</h1>
+        <p>Меня зовут <span data-bind="firstName"></span> <span data-bind="lastName"></span>.</p>
+        <p>Мне <span data-bind="old"></span> лет и я живу в городе <span data-bind="town"></span>.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

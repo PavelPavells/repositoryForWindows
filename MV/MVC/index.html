@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+
+    <style>
+        .friend {
+            float: left;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="header"></div>
+
+    <div class="btn-group btn-group-lg">
+        <button type="button" class="btn btn-default" onclick="Router.handle('music')">Музыка</button>
+        <button type="button" class="btn btn-default" onclick="Router.handle('friends')">Друзья</button>
+        <button type="button" class="btn btn-default" onclick="Router.handle('news')">Новости</button>
+    </div>
+    <hr>
+    <div id="results"></div>
+</div>
+
+<script src="model.js"></script>
+<script src="view.js"></script>
+<script src="controller.js"></script>
+<script src="router.js"></script>
+<script src="entry.js"></script>
+
+<script type="text/x-handlebars-template" id="headerTemplate">
+    <h1>Данные из VK-аккаунта: {{first_name}} {{last_name}}</h1>
+</script>
+
+<script type="text/x-handlebars-template" id="musicTemplate">
+    <ul class="list-group" id="audioList">
+        {{#each list}}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-xs-10">
+                    <span class="title">{{{artist}}} - {{{title}}}</span>
+                </div>
+                <div class="col-xs-2 text-right">{{formatTime duration}}</div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+
+<script type="text/x-handlebars-template" id="friendsTemplate">
+    <div id="friendsList">
+        {{#each list}}
+        <div class="friend text-center">
+            <img src="{{photo_100}}" class="img-circle">
+            <div>{{first_name}}<br>{{last_name}}</div>
+        </div>
+        {{/each}}
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="newsTemplate">
+    <div class="news">
+        {{#each list}}
+        {{#if text}}
+        <div class="post">
+            <b>{{formatDate date}}</b>
+            <div class="post-text">{{{text}}}</div>
+        </div>
+        <hr>
+        {{/if}}
+        {{/each}}
+    </div>
+</script>
+</body>
+</html>
