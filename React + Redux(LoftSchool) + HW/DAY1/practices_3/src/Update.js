@@ -7,10 +7,10 @@ class Simple extends PureComponent {
     console.log('render simple');
     return (
     <div>
-      {`Simple ${counter.value`};
+      {`Simple ${counter.value}`};
     </div>
     );
-  }
+  };
 };
 
 const a = [0];
