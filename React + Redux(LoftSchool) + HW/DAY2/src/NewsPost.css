@@ -1,0 +1,14 @@
+.news-post {
+	border-radius: 3px;
+	padding: 12px;
+	width: 100%;
+	background-color: #f5f5f5;
+}
+.comment-input {
+	border-radius: 3px;
+	border: 1px solid #eee;
+	padding: 2px 3px;
+	font-size: 14px;
+	color: #000;
+	width: 100%;
+}

@@ -1,0 +1,13 @@
+.App {
+	padding: 16px;
+	width: 400px;
+	margin: 20px auto;
+}
+.post-input {
+	border-radius: 3px;
+	border: 1px solid #eee;
+	padding: 4px 6px;
+	font-size: 18px;
+	color: #000;
+	width: 100%;
+}
