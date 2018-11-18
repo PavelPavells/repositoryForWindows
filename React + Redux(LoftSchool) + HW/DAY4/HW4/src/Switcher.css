@@ -1,0 +1,13 @@
+.component-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.component-list__name {
+    margin-right: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.component-wrapper {
+    padding: 20px 40px;
+}
