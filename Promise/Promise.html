@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let url1 = '#';        // Any picture
+		let url2 = '#';		  // Any picture
+		let url3 = '#';		 // Any picture
+		function loadImage(url) {
+			return new Promise((resolve, reject) => {
+				let i = new Image();
+				document.body.appendChild(i);
+				i.src = url;
+				i.addEventListener('load', () => {
+					resolve();
+				});
+				i.addEventListener('error', () => {
+					reject;
+				});
+			});
+		};
+		let p = loadImage(url1);
+		p.then(
+			() => {
+				console.log('success');
+				return loadImage(url1);
+			}
+		).then(
+			() => {
+				console.log('success');
+				return loadImage(url2);
+			}
+		).then(
+			() => {
+				console.log('success');
+				return loadImage(url3);
+			}
+		);	
+	</script>
+</body>
+</html>
