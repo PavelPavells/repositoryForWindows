@@ -13,7 +13,7 @@ class CardNumberInput extends Component {
             const chars = value.split('');
             let formatStr = '';
             chars.forEach((char, index) => {
-                foramtStr += char;
+                formatStr += char;
                 if((index + 1) % 4 === 0) {
                     formatStr += ' ';
                 };
