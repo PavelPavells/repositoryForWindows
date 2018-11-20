@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!-- css -->
+  <link rel="stylesheet" href="bower/normalize-css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+
+    body{
+      text-align: center;
+    }
+
+    .brd {
+      border: 1px solid #000;
+    }
+
+    svg {
+      margin-left: 40px;
+    }
+
+   .rect {
+      fill: #ff0;
+      stroke: red;
+      stroke-width: 2;
+    }
+
+    .row {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="row">
+    <svg class = "brd" width ="200" height ="200" viewBox = "0 0 200 200">
+      <circle cx="100" cy="100" r="50" style ="fill:green;" />
+    </svg>
+    <svg class = "brd" width ="200" height ="200" viewBox = "0 0 100 100">
+      <circle cx="100" cy="100" r="50" style ="fill:green;" />
+    </svg>
+  </div>
+  <div class="row">
+    <svg class = "brd" width ="200" height ="200" viewBox = "50 50 50 50">
+      <circle cx="100" cy="100" r="50" style ="fill:green;" />
+    </svg>
+    <svg class = "brd" width ="200" height ="200" viewBox = "50 50 100 100">
+      <circle cx="100" cy="100" r="50" style ="fill:green;" />
+    </svg>
+  </div>
+
+
+</body>
+</html>
