@@ -1,8 +1,12 @@
 {
-	"name": "fcc-learn-npm-package-json",
-	"author": "Pavel Smirnov",
+  "name": "fcc-learn-npm-package-json",
+  "author": "pavel smirnov",
+  "license": "MIT",
+  "version": "1.2",
+  "description": "a project that does something awesome",
 	"dependencies": {
-		"express": "^4.14.0"
+		"express": "^4.14.0",
+    "package-name": "version"
 	},
 	"main": "server.js",
 	"scripts": {
@@ -14,5 +18,6 @@
 	"repository": {
 		"type": "git",
 		"url": "https://idontknow/todo.git"
-	}
+	},
+  "keywords": ["freecodecamp", "related", "words"]
 }
