@@ -1,0 +1,23 @@
+{
+    "name": "timestamp",
+    "version": "1.0.0",
+    "description": "Timestamp Microservice for FreeCodeCamps API-Projects",
+    "main": "index.js",
+    "scripts": {
+      "start": "node server.js",
+      "test": "mocha"
+    },
+    "author": "SehrOne",
+    "license": "ISC",
+    "dependencies": {
+      "chai": "^3.5.0",
+      "express": "^4.14.0",
+      "mocha": "^3.2.0",
+      "moment": "^2.17.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/PavelPavells/Timestamp-Microservice.git"
+    },
+    "homepage": "https://github.com/SehrOne/Timestamp-Microservice#readme"
+  }
