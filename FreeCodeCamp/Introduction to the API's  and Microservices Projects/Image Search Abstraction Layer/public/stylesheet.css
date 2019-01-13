@@ -1,0 +1,92 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+/***************************/
+/* General Layout & Design */
+/***************************/
+
+#header, #icons, #links, h2 {
+	text-align: center;
+	padding: 1rem;
+}
+#header {
+	background-color: rgb(54, 255, 175);
+	background-color: rgba(54, 255, 175, 0.5);
+}
+.hiddenBox {
+	display: none;
+	max-width: 540px;
+	margin: 0 auto 1rem auto;
+}
+code {
+	display: block;
+	padding: 0.3rem 0.5rem;
+	font-family: monospace;
+	background-color: rgb(54, 255, 175);
+	background-color: rgba(54, 255, 175, 0.5);
+}
+.inline {
+	display: inline;
+	background-color: lightgrey;
+}
+p {
+	margin: 1rem 0 0.2rem 0;
+}
+i {
+	margin: 0.5rem 2rem;
+	cursor: pointer;
+}
+a {
+	font-family: inherit;
+	color: inherit;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a i {
+	margin: 0 1rem;
+}
+
+
+/************/
+/* Tooltips */
+/************/
+
+.tooltip {
+	display: inline-block;
+	position: relative;
+}
+.tooltip .tooltipText {
+	position: absolute;
+	left: 50%;
+	bottom: -50%;
+	z-index: 1;
+	font-size: 0.8rem;
+	background-color: grey;
+	color: white;
+	border-radius: 15px;
+	padding: 0.2rem 0.5rem;
+	opacity: 0;
+	transition: all 0.5s;
+	
+	width: 7rem;
+	margin-left: -3.5rem;
+}
+.tooltip:hover .tooltipText {
+	opacity: 1;
+}
+.tooltip .tooltipText::after {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -10px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid grey;
+}

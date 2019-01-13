@@ -1,0 +1,26 @@
+{
+    "name": "image-search-abstraction-layer",
+    "version": "1.0.0",
+    "description": "image-search-abstraction-layer for free_code_camps api-projects",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/PavePavells/Image-Search-Abstraction-Layer.git"
+    },
+    "author": "SehrOne",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/PavelPavells/Image-Search-Abstraction-Layer/issues"
+    },
+    "homepage": "https://github.com/PavelPavells/Image-Search-Abstraction-Layer#readme",
+    "dependencies": {
+      "express": "^4.14.0",
+      "mongodb": "^2.2.22",
+      "https": "^1.0.0"
+    },
+    "devDependencies": {}
+  }
