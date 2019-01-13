@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>URL Shortener</title>
+	<link href="./stylesheet.css" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+	<div id="header">
+		<h1>URL-Shortener</h1>
+		<p>URL Shortener Microservice 
+		    <a href="https://www.freecodecamp.com/challenges/url-shortener-microservice" target="_blank">FreeCodeCamps API-Projects</a>
+		</p>
+	</div>
+	<div id="icons">
+		<div class="tooltip">
+			<i aria-hidden="true" class="tooltip fa fa-question-circle-o fa-4x" id="btn_howToCreate"></i> 
+			<span class="tooltipText" id="tip1">How to create a new shortened URL</span>
+		</div>
+		<div class="tooltip">
+			<i aria-hidden="true" class="tooltip fa fa-terminal fa-4x" id="btn_createNew"></i> 
+			<span class="tooltipText" id="tip2">Create a new shortened URL</span>
+		</div>
+		<div class="tooltip">
+			<i aria-hidden="true" class="tooltip fa fa-sign-out fa-4x" id="btn_howToUse"></i> 
+			<span class="tooltipText" id="tip3">How to use the shortened URL</span>
+		</div>
+	</div>
+	<div class="hiddenBox" id="howToCreate">
+		<h2>How to create a new shortened URL:</h2>
+		<p>Go to</p>
+		<code>https://shortthis.herokuapp.com/new/</code>
+		<p>And pass a URL in the following format</p>
+		<code>http(s)://www.example.com</code>
+		<p>For Example:</p>
+		<code><a href="https://shortthis.herokuapp.com/new/https://www.google.com" target="_blank">https://shortthis.herokuapp.com/new/https://www.google.com</a></code>
+		<h2>Output:</h2>
+		<code>
+		    {<br>
+		    &ensp; originalURL: https://www.google.com/,<br>
+		    &ensp; shorthandURL: https://shortthis.herokuapp.com/UfT<br>
+		    }
+		</code>
+	</div>
+	<div class="hiddenBox" id="createNew">
+		<h2>Create your Own:</h2>
+		<input id="urlInput" placeholder="Enter your URL" required="true" type="text"> 
+		<button id="CreateBtn">Create</button>
+		<p id="spinner"></p>
+		<p id="testOutput"></p>
+	</div>
+	<div class="hiddenBox" id="howToUse">
+		<h2>How to use the created shortened URL:</h2>
+        <p>Just go to the created shortened URL:</p>
+		<code><a href="https://shortthis.herokuapp.com/UfT" target="_blank">https://shortthis.herokuapp.com/UfT</a></code>
+		<p>This will automatically redirect you to the former original URL</p>
+	</div>
+	<div id="links">
+		<a href="https://github.com/PavelPavells/URL-Shortener" target="_blank" title="Github-Repo">
+		    <i aria-hidden="true" class="fa fa-github fa-3x"></i>
+		</a> 
+		<a href="https://www.freecodecamp.com/sehrone" target="_blank" title="FreeCodeCamp-Profile">
+		    <i aria-hidden="true" class="fa fa-free-code-camp fa-3x"></i>
+		</a>
+	</div>
+	<script src="./script.js" type="text/javascript"></script>
+</body>
+</html>
