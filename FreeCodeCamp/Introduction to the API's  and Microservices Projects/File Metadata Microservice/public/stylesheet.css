@@ -1,0 +1,64 @@
+html, body {
+    height: 100%; 
+    width: 100%;
+    font-size: 100%;
+    cursor: default;
+    /*Center the Content Div in the middle of the page*/
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-align-items: center;
+            align-items: center;
+  }
+  body {
+      height: 90%; /*Needed because of an appearing scrollbar if 100%*/
+      background: rgb(255,83,1);
+      background: -webkit-gradient(radial, center center, 0, center center, 400, from(rgb(255,83,1)), to(rgb(127, 42, 6)));
+      background: -webkit-radial-gradient(rgb(255,83,1), rgb(127, 42, 6));
+      background:    -moz-radial-gradient(rgb(255,83,1), rgb(127, 42, 6));
+      background:      -o-radial-gradient(rgb(255,83,1), rgb(127, 42, 6));
+      background:         radial-gradient(rgb(255,83,1), rgb(127, 42, 6));
+  }
+  .row {
+      text-align: center;
+      margin-bottom: 1rem;
+  }
+  h1, .custom-form-button {
+      text-align: center;
+      font-family: sans-serif;
+      color: rgb(64, 21, 3);
+  }
+  .hide-original-button {
+      display: none;
+  }
+  .custom-form-button {
+      /* Font */
+      font-size: 1.5rem;
+      font-weight: bold;
+      
+      /* Color & Border */
+      border-radius: 0.5rem;
+      box-shadow: 0 0 5px rgb(0,0,0);
+      box-shadow: 0 0 5px rgba(0,0,0,0.7);
+      
+      /* Position & Size */
+      display: inline-block;
+      padding: 0.3rem 1.5rem;
+      
+      /* Stuff */
+      cursor: pointer;
+      -webkit-transition: all 0.5s;
+         -moz-transition: all 0.5s;
+          -ms-transition: all 0.5s;
+           -o-transition: all 0.5s;
+              transition: all 0.5s;
+  }
+  .custom-form-button:hover {
+      color: rgb(255,83,12);
+      background-color: rgb(64,21,3);
+  }

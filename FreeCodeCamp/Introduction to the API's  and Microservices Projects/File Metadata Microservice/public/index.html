@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+
+	<title>File Metadata Microservice</title>
+	<link href="./stylesheet.css" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+      
+    <h1>Upload a File to get it's MIME-type and size</h1>
+    
+    <form id="form" action="/api/fileanalyse" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <label id ="l_upfile" for="upfile" class="custom-form-button">Choose your File</label>
+            <input type="file" name="upfile" id="upfile" class="hide-original-button"/>
+        </div>
+        <div class="row">
+            <label for ="submit" class="custom-form-button"><i class="fa fa-2x fa-upload"></i></label>
+            <input type="submit" name="submit" id="submit" class="hide-original-button" />
+        </div>
+    </form>
+    
+  </div>
+  <script src="./script.js" type="text/javascript"></script>
+</body>
+</html>
