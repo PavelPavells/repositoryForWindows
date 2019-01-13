@@ -1,0 +1,23 @@
+{
+    "name": "request_header_parser",
+    "version": "1.0.0",
+    "description": "Request Header Parser Microservice for FreeCodeCamp's API Projects",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/PavePavells/Request-Header-Parser-Microservice.git"
+    },
+    "author": "SehrOne",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/PavelPavells/Request-Header-Parser-Microservice/issues"
+    },
+    "homepage": "https://github.com/PavelPavells",
+    "dependencies": {
+      "express": "^4.14.0",
+      "multer": "^1.2.1"
+    }
+  }
