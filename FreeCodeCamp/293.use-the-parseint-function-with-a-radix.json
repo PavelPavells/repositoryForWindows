@@ -1,0 +1,1 @@
+{"index.js":"function convertToInteger(str) {\n    var radix = 2;\n    return parseInt(str, radix);\n}\n\nconvertToInteger(\"10011\");"}
