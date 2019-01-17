@@ -1,0 +1,1 @@
+{"index.js":"function checkSign(num) {\n  return (num > 0 ? \"positive\" : (num < 0 ? \"negative\" : (num === 0 ? \"zero\" : \"not possible\")));\n}\n\ncheckSign(10);"}
