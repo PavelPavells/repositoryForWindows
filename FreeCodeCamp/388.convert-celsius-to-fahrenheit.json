@@ -1,0 +1,1 @@
+{"index.js":"function convertToF(celsius) {\n  var fahrenheit = (celsius * (9 / 5)) + 32;\n  if(typeof fahrenheit !== 'undefined') {\n    return fahrenheit;\n  } else {\n    return 'fahrenheit not defined';\n  }\n}\n\nconvertToF(30);"}
