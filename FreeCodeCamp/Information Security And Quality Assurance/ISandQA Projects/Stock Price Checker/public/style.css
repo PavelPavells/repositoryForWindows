@@ -1,0 +1,15 @@
+div {
+    margin-left: 5%;
+  }
+div:first-of-type {
+    margin-top: 5%;
+}
+hr {
+    margin: 50px;
+}
+h2 {
+    text-align: left;
+}
+input[type='text'] {
+    width: 100px;
+}
