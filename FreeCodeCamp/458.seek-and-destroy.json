@@ -1,0 +1,1 @@
+{"index.js":"function destroyer(arr) {\n  var args = Array.prototype.slice.call(arguments);\n\n  for (var i = 0; i < arr.length; i++) {\n    for (var j = 0; j < args.length; j++) {\n      if (arr[i] === args[j]) {\n        delete arr[i];\n      }\n    }\n  }\n  return arr.filter(Boolean);\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);"}
