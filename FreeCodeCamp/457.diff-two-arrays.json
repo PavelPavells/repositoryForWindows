@@ -1,0 +1,1 @@
+{"index.js":"function diffArray(arr1, arr2) {\n  var newArr = [];\n  function onlyInFirst(first, second) {\n    for(var i = 0; i < first.length; i++) {\n      if(second.indexOf(first[i]) === -1) {\n        newArr.push(first[i]);\n      }\n    }\n  }\n  onlyInFirst(arr1, arr2);\n  onlyInFirst(arr2, arr1);\n  \n  return newArr;\n}\n\ndiffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);"}
