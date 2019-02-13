@@ -1,0 +1,1 @@
+{"index.js":"function sumFibs(num) {\n  var prevNumber = 0;\n  var currNumber = 1;\n  var result = 0;\n  while(currNumber <= num) {\n    if(currNumber % 2 !== 0) {\n      result += currNumber;\n    }\n    currNumber += prevNumber;\n    prevNumber = currNumber - prevNumber;\n  }\n  return result;\n}\n\nsumFibs(4);"}
