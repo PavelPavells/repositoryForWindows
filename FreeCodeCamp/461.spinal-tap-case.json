@@ -1,0 +1,1 @@
+{"index.js":"function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\n  // --David St. Hubbins\n  var regex = /\\s+|_+/g;\n  str = str.replace(/([a-z])([A-Z])/g, '$1 $2');\n  return str.replace(regex, '-').toLowerCase();\n}\n\nspinalCase('This Is Spinal Tap');"}
