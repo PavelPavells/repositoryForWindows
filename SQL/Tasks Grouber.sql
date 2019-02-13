@@ -106,5 +106,54 @@ Part 4;
         WHERE rating > 100
         AND Orders.cnum = Customers.cnum
         AND Orders.snum = Salespeople.snum;        
-
-        
+//Part9
+1)   SELECT first.sname, second.sname
+        FROM Salespeople first, Salespeople second
+        WHERE first.city = second.city AND first.sname < second.sname;
+2)   SELECT cname, first.onum, second.onum      
+        FROM Orders first, Orders second, Customers
+        WHERE first.cnum = second.cnum 
+        AND first.cnum = Customers.cnum
+        AND first onum < second.onum;
+3)   SELECT a.cname, a.city
+        FROM Customers a, Customers b
+        WHERE a.rating = b.rating
+        AND b.cnum = 2001;
+//Part10
+1)   SELECT *
+        From Orders
+        WHERE cnum = (SELECT cnum
+                            FROM Customers
+                            WHERE cname = 'Cisneros');
+     SELECT *
+        From Orders
+        WHERE cnum IN (SELECT cnum
+                            FROM Customers
+                            WHERE cname = 'Cisneros');
+2)   SELECT DISTINCT cname, rating
+        FROM Customers, Orders
+        WHERE amt > (SELECT AVG(amt)
+                     FROM Orders)
+                     AND Orders.cnum = Customers.cnum;
+3)   SELECT snum, SUM(amt)
+        FROM Orders
+        GROUP BY snum
+        HAVING SUM(amt) > (SELECT MAX(amt)
+                                FROM Orders);
+//Part11
+1)   SELECT cnume, cname
+        FROM Customers outer
+        WHERE rating = (SELECT MAX(rating)
+                        FROM Customers inner
+                        WHERE inner.city = outer.city);
+2) //Соотнесенный подзапрос
+     SELECT snum, sname
+        FROM Salespeople main
+        WHERE city IN (SELECT city
+        FROM Customers inner
+        WHERE inner.snum < > main.snum);
+   //Объединение
+     SELECT DISTINCT first.snum, sname
+        FROM Salespeople first, Customers second
+        WHERE first.city = second.city AND first.snum <> second.snum;
+//Part12
