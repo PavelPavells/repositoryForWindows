@@ -157,3 +157,54 @@ Part 4;
         FROM Salespeople first, Customers second
         WHERE first.city = second.city AND first.snum <> second.snum;
 //Part12
+1) SELECT *
+        FROM Salespeople first
+        WHERE EXISTS (SELECT * 
+                        FROM Customers second
+                        WHERE first.snum = second.snum 
+                        AND rating = 300);
+2) SELECT a.snum, sname, a.city, comm
+        FROM Salespeople a, Customers b
+        WHERE a.snum = b.snum 
+        AND b.rating = 300;
+3) SELECT *
+        FROM Salespeople a
+        WHERE EXISTS (SELECT *
+                        FROM Customers b
+                        WHERE b.city = a.city
+                        AND a.snum <> b.snum);
+4) SELECT *
+        FROM Customers a
+        WHERE EXISTS (SELECT *
+                        FROM Orders b
+                        WHERE a.snum = b.snum
+                        AND a.cnum <> b.cnum);
+//Part13
+1) SELECT *
+        FROM Customers
+        WHERE rating >= ANY (SELECT rating
+                                FROM Customers
+                                WHERE snum = 1002);
+2) SELECT *
+        FROM Salespeople
+        WHERE city <> ALL (SELECT city
+                                FROM Customers);
+2.1)SELECT *
+        FROM Salespeople
+        WHERE NOT city = ANY (SELECT city
+                                FROM Customers);
+3) SELECT *
+        FROM Orders
+        WHERE amt > ALL (SELECT amt     
+                                FROM Orders a, Customers b
+                                WHERE a.cnum = b.cnum
+                                AND b.city = 'London');
+4) SELECT *
+        FROM Orders
+        WHERE amt > (SELECT MAX(amt)
+                        FROM Orders a, Customers b
+                        WHERE a.cnum = b.cnum
+                        AND b.city = 'London');
+//Part14
+1) SELECT *
+        FROM
