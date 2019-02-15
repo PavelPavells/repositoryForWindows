@@ -206,5 +206,75 @@ Part 4;
                         WHERE a.cnum = b.cnum
                         AND b.city = 'London');
 //Part14
-1) SELECT *
-        FROM
+1) SELECT cname, city, rating, 'High rating'
+        FROM Customers
+        WHERE rating >= 200
+
+        UNION
+
+        SELECT cname, city, rating, ' Low rating'
+        FROM Customers
+        WHERE rating < 200;
+2) SELECT cnum, cname
+        FROM Customers a
+        WHERE 1 < (SELECT COUNT(*)
+                        FROM Orders b
+                        WHERE a.cnum = b.cnum)
+
+        UNION
+
+        SELECT snum, sname
+        FROM Salespeople a
+        WHERE 1 < (SELECT COUNT(*)
+                        FROM Orders b
+                        WHERE a.snum = b.snum)
+        ORDER BY 2;
+3) SELECT snum
+        FROM Salespeople
+        WHERE city = 'San Jose'
+
+        UNION
+
+        (SELECT cnum
+         FROM Customers
+         WHERE city = 'San Jose'
+
+         UNION ALL
+
+         SELECT onum
+         FROM Orders
+         WHERE odate = 10/03/1990);
+//Part15
+1) INSERT INTO Salespeople (city, cname, comm, cnum)
+        VALUES ('San Jose', 'Bianco', NULL, 1100);
+2) DELETE FROM Orders WHERE cnum = 2006;
+3) UPDATE Customers
+        SET rating = rating + 100
+        WHERE city = 'Rome';
+4) UPDATE Customers
+        SET snum = 1004
+        WHERE snum = 1002;
+//Part16
+1) INSERT INTO Multicust
+        SELECT *
+        FROM Salespeople
+        WHERE 1 < (SELECT COUNT(*)
+                        FROM Customers
+                        WHERE Customers.snum = Salespeople.snum);
+2) DELETE FROM Customers
+        WHERE NOT EXISTS (SELECT *
+                                FROM Orders
+                                WHERE cnum = Customers.cnum);
+3) UPDATE Salespeople
+        SET comm = comm + (comm * .2)
+        WHERE 3000 < (SELECT SUM(amt)
+                        FROM Orders
+                        WHERE snum = Salespeople.snum);
+//withcheck
+  UPDATE Salespeople
+        SET comm = comm + (comm * .2)
+        WHERE 3000 < (SELECT SUM(amt)
+                        FROM Orders
+                        WHERE snum = Salespeople.snum)
+                AND comm + (comm * .2) < 1.0;
+//Part17
