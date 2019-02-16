@@ -278,3 +278,60 @@ Part 4;
                         WHERE snum = Salespeople.snum)
                 AND comm + (comm * .2) < 1.0;
 //Part17
+1) CREATE TABLE Customers
+        (
+                cnum integer,
+                cname char(10),
+                city char(10),
+                rating integer,
+                snum integer
+        )
+2) CREATE INDEX Datesearch ON Orders(odate);
+3) CREATE UNIQUE INDEX Onumkey On Orders(onum);
+4) CREATE INDEX Mydate ON Orders(snum, odate);
+5) CREATE UNIQUE INDEX Combination ON Customers(snum, rating);
+//Part18
+1) CREATE TABLE Orders
+        (onum integer NOT NULL PRIMARY KEY,
+         amt decimal,
+         odate date NOT NULL,
+         cnum integer NOT NULL,
+         snum integer NOT NULL,
+         UNIQUE (snum, cnum));
+1.1)CREATE TABLE Orders
+        (onum integer NOT NULL UNIQUE,
+         amt decimal,
+         odate date NOT NULL,
+         cnum integer NOT NULL,
+         snum integer NOT NULL,
+         UNIQUE (snum, cnum));
+2) CREATE TABLE Salespeople
+        (snum, integer NOT NULL PRIMARY KEY,
+         sname char(15) CHECK (sname BETWEEN 'AA' AND 'MZ'),
+         city char(15),
+         comm decimal NOT NULL DEFAULT = .10);
+3) CREATE TABLE
+        (onum integer NOT NULL,
+         amt decimal,
+         odate date,
+         cnum integer NOT NULL,
+         snum integer NOT NULL,
+         CHECK ((snum > snum) AND (onum > cnum)));
+//Part19
+1) CREATE TABLE Cityorders
+        (onum integer NOT NULL PRIMARY KEY,
+         amt decimal,
+         cnum integer,
+         snum integer,
+         city char(15),
+         FOREIGN KEY (onum, amt, snum) REFERENCES Orders (onum, amt, snum),
+         FOREIGN KEY (cnum, city) REFERENCES Customers(cnum, city));
+2) CREATE TABLE Orders
+        (onum integer NOT NULL,
+         amt decimal,
+         odate date,
+         cnum integer NOT NULL,
+         snum integer,
+         prev integer,
+         UNIQUE (cnum, onum),
+         FOREIGN KEY (cnum, prev) REFERENCES Orders (cnum, onum));
