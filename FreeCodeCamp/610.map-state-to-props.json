@@ -1,0 +1,1 @@
+{"index.jsx":"const state = [];\nconst mapStateToProps = (state) => {\n  return {\n    messages: state\n  }\n}\n"}
