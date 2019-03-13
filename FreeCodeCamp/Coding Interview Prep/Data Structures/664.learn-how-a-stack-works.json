@@ -1,0 +1,1 @@
+{"index.js":"var homeworkStack = [\"BIO12\",\"HIS80\",\"MAT122\",\"PSY44\"];\n// Only change code below this line\nhomeworkStack.pop();\nhomeworkStack.push(\"CS50\");"}
