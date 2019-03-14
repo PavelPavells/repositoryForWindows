@@ -1,0 +1,1 @@
+{"index.js":"function checkSet() {\n  var set = new Set([1, 2, 3, 3, 2, 1, 2, 3, 1]);\n  // change code below this line\n  function checkSet() {\n    var set = newSet([1, 2, 3, 'Taco', 'Cat', 'Awesome']);\n    return set;\n  }\n  // change code above this line\n  console.log(set);\n  return set;\n}\n\ncheckSet();"}
