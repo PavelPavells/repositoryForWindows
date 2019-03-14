@@ -1,0 +1,1 @@
+{"index.js":"function checkSet(arrToBeSet, checkValue){\n\n   // change code below this line\n    var set = new Set([1, 2, 3]);\n    var hasArr = set.has(arrToBeSet);\n    var howBig = set.size;\n    return set;\n   // change code above this line\n\n}\n\ncheckSet([ 1, 2, 3], 2); // Should return [ true, 3 ]"}
