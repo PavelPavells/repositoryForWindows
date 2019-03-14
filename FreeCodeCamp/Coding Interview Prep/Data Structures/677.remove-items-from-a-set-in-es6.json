@@ -1,0 +1,1 @@
+{"index.js":"function checkSet(){\n   var set = new Set([1, 2, 3, 4, 5])//Create a set with values 1, 2, 3, 4, & 5\n   //Remove the value 2\n   set.delete(2);\n   //Remove the value 5\n   set.delete(5);\n   //Return the set\n   return set;\n}"}
