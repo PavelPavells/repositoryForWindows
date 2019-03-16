@@ -1,0 +1,1 @@
+{"index.js":"function accumulator (sum) {\n  return function(n) {\n    return sum += n;\n  }\n}"}
