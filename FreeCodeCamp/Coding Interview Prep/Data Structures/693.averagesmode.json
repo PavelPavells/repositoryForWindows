@@ -1,0 +1,1 @@
+{"index.js":"function mode (arr) {\n  let count = arr.reduce((count, el) => count.set(el, (count.get(el) || 0) + 1), new Map())\n  let max = Math.max(...count.values())\n  return [...count.entries()]\n          .filter(([_, count]) => count === max)\n          .map(([key]) => key)\n}"}
