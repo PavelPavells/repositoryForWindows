@@ -1,0 +1,1 @@
+{"index.js":"function getFinalOpenedDoors (numDoors) {\n  const finalState = [];\n  let i = 1;\n  while(Math.pow(i, 2) <= numDoors) {\n    finalState.push(Math.pow(i, 2));\n    i++;\n  }\n  return finalState;\n}"}
