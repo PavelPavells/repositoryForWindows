@@ -1,0 +1,1 @@
+{"index.js":"function rms (arr) {\n  const sumOfSquares = arr.reduce((s, x) => s + x * x, 0);\n  return Math.sqrt(sumOfSquares / arr.length);\n}"}
