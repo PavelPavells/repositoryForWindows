@@ -1,0 +1,1 @@
+{"index.js":"var Node = function(element){\n    this.element = element; \n    this.next = null; \n};\nvar Kitten = new Node(\"Kitten\");\nvar Puppy = new Node(\"Puppy\");\n\nKitten.next = Puppy;\n// only add code below this line\nvar Cat = new Node(\"Cat\");\nvar Dog = new Node(\"Dog\");\nPuppy.next = Cat;\nCat.next = Dog;\n// test your code\nconsole.log(Kitten.next);"}
